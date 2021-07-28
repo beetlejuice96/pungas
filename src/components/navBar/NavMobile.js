@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   title: {},
   menuButton: {
     zIndex: 1302,
-    color: "#3f51b5",
+    color: "#3f51b6",
   },
 }));
 
