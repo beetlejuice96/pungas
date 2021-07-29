@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
     return (
         <div>
-            Hero de Pungas
+            Hero de Pungas locos
         </div>
     )
 }
