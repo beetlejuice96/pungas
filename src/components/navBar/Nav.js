@@ -16,7 +16,9 @@ const Nav = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <AppBar position="fixed" className={classes.glass}>
+    <AppBar 
+      position="static"
+      className={`${classes.glass} ${!isMobile&&classes.rounded}`}>
       <Toolbar>
         {isMobile ? <NavMobile /> : "estoy en desktop carirems"}
       </Toolbar>
@@ -33,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     backdropFilter: `blur(${4}px)`,
     boxShadow: "10px 10px 10px rgba(30, 30, 30, 0.1)",
   },
+  rounded: {
+    borderRadius: '45px'
+  }
   //   glassBorders: {
   //     borderLeft: `solid 1px ${color("#ffffff").alpha(0.3).toString()}`,
   //     borderTop: `solid 1px ${color("#ffffff").alpha(0.8).toString()}`,
