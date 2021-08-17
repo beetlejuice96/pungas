@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, SwipeableDrawer, IconButton } from "@material-ui/core";
+import { Box, SwipeableDrawer, IconButton, List, ListItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../../assets/images/logo.svg";
+import ItemsNav from '../../utils/ItemsNav';
 
 const NavMobile = () => {
   const [state, setState] = useState({ top: false });
@@ -35,7 +35,13 @@ const NavMobile = () => {
           onClose={toggleDrawer("top", false)}
           onOpen={toggleDrawer("top", true)}
           classes={{ paper: classes.paper }}
-        ></SwipeableDrawer>
+        >
+          <List>
+            {ItemsNav && ItemsNav.map(item => (
+              <ListItem button key={item.key}>{item.value}</ListItem>
+            ))}
+          </List>
+        </SwipeableDrawer>
       </>
     );
   };
